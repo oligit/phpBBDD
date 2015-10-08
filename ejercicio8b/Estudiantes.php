@@ -2,6 +2,7 @@
 	/**
 	* 
 	*/
+	include 'Database.php';
 	class Estudiantes extends Database
 	{
 		private $userdata;

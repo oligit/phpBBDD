@@ -1,6 +1,6 @@
 <?php  
 	require_once "../config.php";
-	include 'Database.php';
+	
 	include 'Estudiantes.php';
 ?>
 <!DOCTYPE html>
