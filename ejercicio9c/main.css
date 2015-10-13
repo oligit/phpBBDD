@@ -1,0 +1,46 @@
+
+tr:first-child {
+	background-color: #CD7F05;
+}
+tr:nth-child(odd){
+	background-color: rgba(179, 227, 255, 0.81)
+}
+tr:nth-child(even){
+	background-color: rgba(255, 199, 163, 0.81);
+}
+td{
+	border: 0;
+}
+body{
+	background: #80ECFF url('../img/world.jpg') no-repeat fixed;
+	
+}
+.main{
+	width: 100%;
+}
+fieldset{
+	width: 28%;
+	margin: 0 auto;
+}
+legend{
+	color: white;
+}
+select{
+	width: 100%;
+}
+.negrita{
+	font-weight: 900;
+}
+input[type="submit"]{
+	margin: 1em 0 0 0;
+	width: 100%;
+}
+article{
+	width: 100%;
+}
+section{
+	width: 100%;
+}
+table{
+	margin: 0 auto;
+}
