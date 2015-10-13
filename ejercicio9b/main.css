@@ -1,4 +1,29 @@
+a{
+	color: rgb(29, 124, 206);
+	text-decoration: none;
 
+}
+.cookie{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 47px;
+    background-color: rgba(255, 255, 255, 0.65);
+    z-index: 100;
+}
+a.footer{
+	color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: calibri;
+}
+a::visited{
+	color: #BD6EE2;
+}
+p.footer{
+	text-align: center;
+}
 span{
 	cursor: pointer;
 	z-index: 1000;
@@ -20,8 +45,8 @@ tr:nth-child(odd){
 tr:nth-child(even){
 	background-color: rgba(255, 199, 163, 0.81);
 }
-td{
-	border: 0;
+table{
+	border-spacing: 0;
 }
 body{
 	background: #80ECFF url('../img/world.jpg') no-repeat fixed;

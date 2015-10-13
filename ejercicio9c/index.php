@@ -5,6 +5,28 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Ejercicio 9 a</title>
 	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			console.log('entra en main');
+			$('span#boton-top').click(function(){
+				console.log('entra en la casa');
+	    		$('body,html').animate(
+	    			{scrollTop : 0}, 500);
+	    		return false;
+			});
+			$(window).scroll(function(){
+			    if ($(this).scrollTop() > 0) {
+			        $('#boton-top').fadeIn();
+			    } else {
+			        $('#boton-top').fadeOut();
+			    }
+			});
+		});
+	</script>
 </head>
 <body>
 	<div class="main">
@@ -32,8 +54,9 @@
 			Index::main();
 		?>
 	</article>
+	<span id="boton-top">
+		<img src="../img/up.png" alt="Casa de up">
+	</span>
 	
-	
-
 </body>
 </html>

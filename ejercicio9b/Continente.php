@@ -62,11 +62,11 @@ class Continente extends Database
 
 		while ($arr = $this->result->fetch_array()){
 			$html .= "<tr>";
-			$html .= "<td>".$arr['Name']."</td>";
+			$html .= "<td><a target='_blank' href='https://www.google.es/maps/place/".$arr['Name']."'>".$arr['Name']."</a></td>";
 			$html .= "<td>".$arr['sur']." km<sup>2</sup></td>";
 			$html .= "<td>".$arr['pop']." habitantes</td>";
 			$html .= "<td>".$arr['den']." hab/km<sup>2</sup></td>";
-			$html .= "<td>".$arr['cap']."</td>";
+			$html .= "<td><a target='_blank' href='https://www.google.es/maps/place/".$arr['cap']."'>".$arr['cap']."</a></td>";
 			$html .= "</tr>";
 		}
 		$html .= $this->calcularTotales();

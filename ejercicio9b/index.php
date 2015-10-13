@@ -6,6 +6,7 @@
 	<title>Ejercicio 9 a</title>
 	<link rel="stylesheet" href="main.css">
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 	<script>
 		jQuery(document).ready(function($) {
 			console.log('entra en main');
@@ -21,6 +22,9 @@
 			    } else {
 			        $('#boton-top').fadeOut();
 			    }
+			});
+			$('#cookie').click(function(e) {
+				$('.cookie').css('display', 'none');;
 			});
 		});
 	</script>
@@ -54,6 +58,15 @@
 	<span id="boton-top">
 		<img src="../img/up.png" alt="Casa de up">
 	</span>
-	
+	<div class="cookie">
+		<p>Aceptas las cookies de este sitio, nano? <button id="cookie">Aceptar</button></p>
+	</div>
+	<footer>
+		<p class="footer">
+			<a href="https://github.com/oligit" class="footer" target="_blank">
+				&copy;Jorge Olivas Agudo
+			</a>
+		</p>
+	</footer>
 </body>
 </html>
