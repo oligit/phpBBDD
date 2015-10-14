@@ -5,58 +5,24 @@ class Continente extends Database
 {
 	private static $tablaDB1 = 'world.country';
 	private static $tablaDB2 = 'world.city';
-	private $continent;//borrar
-	//
-	private $aContinentes;
-	private $continenteElegido;
-	//
+	private $continent;
 	private $sql; //aquí va el select
 	private $sql2;
 	private $result; //objeto resultado
+	private $orderBy;
+	private $direccion;
 	
-	function __construct($c) {
+	function __construct($c, $order, $direction) {
 		parent::__construct();
-		$this->crearSeleccion();
+		$this->continent = (string) $c;
+		$this->orderBy = $order;
+		$this->direccion = $direction;
 	}
-	public function getContinente()
-	{
-		return $this->continenteElegido;
-	}
-	public function setContinente($continente)
-	{
-		if (func_num_args()==1) {
-			$this->continenteElegido = $continente;
-		}else{
-			$n = count($this->aContinentes) -1;
-			$this->continenteElegido = $this->$aContinentes[rand(0,$n)];
-		}
-	}
-	private function crearSeleccion()
-	{
-		if ($this->abrirDB) {
-			$this->sql = "SELECT distinct continent from country;";
-			$this->result = $this->mysqli->query($this->sql);
-			while ($nA = $this->result->fetch_row()) {
-				$this->aContinentes[] = $nA[0];
-			}
-			sort($this->aContinentes);
-			$this->cerrarDB();
-		} else {
-			return "error en la consulta";
-		}
-	}
-	public function mostrarSeleccion()
-	{
-		$html = "";
-		for ($i=0; $i < count($this->aContinentes); $i++) { 
-			$html .= "<option";
-			$html .= ()
-		}
-	}
+	
 	function hacerConsulta(){
 		$tabla1 = self::$tablaDB1;
 		$tabla2 = self::$tablaDB2;
-		$this->sql = "SELECT c.Name, c.SurfaceArea as sur, c.Population as pop , c.Population/c.SurfaceArea as den, ci.Name as cap FROM ".$tabla1." as c, ".$tabla2." as ci where c.Capital = ci.ID and Continent = '".$this->continent."';";
+		$this->sql = "SELECT c.Name, c.SurfaceArea as sur, c.Population as pop , c.Population/c.SurfaceArea as den, ci.Name as cap FROM ".$tabla1." as c, ".$tabla2." as ci where c.Capital = ci.ID and Continent = '".$this->continent."' ORDER BY '".$this->orderBy."'' ".$this->direccion.";";
 		$this->result = $this->mysqli->query($this->sql);
 		if ($this->result) return $this->pintar();
 		else return "Ese continente no existe, se lo habrá comido tu vieja la muy gorda.";
@@ -89,7 +55,7 @@ class Continente extends Database
 	}
 	private function pintar() {
 		$html = "<section>";
-		$html .= "<table class='table'>";
+		$html .= "<table>";
 		$html .= "<tr>";
 		$html .= "<td>Pais</td>";
 		$html .= "<td>Superficie</td>";

@@ -2,7 +2,7 @@
 	<fieldset>
 		<legend>Selecciona un continente</legend>
 		<select name="continente" id="continente">
-			<option value="Asia">Asia</option>
+			<?php $retVal = (isset($_POST['continente'])) ? $_POST['continente'] : 'Asia' ; ?><option value="Asia">Asia</option>
 			<option value="Europe">Europe</option>
 			<option value="North America">North America</option>
 			<option value="Africa">Africa</option>
