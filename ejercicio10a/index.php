@@ -10,10 +10,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Ejercicio 10</title>
 	<link rel="stylesheet" href="">
+	
 	<script type="text/javascript" src="js/js.js"></script>
 	<style>
 		body{
 			background: url('wall.jpg') no-repeat fixed;
+			background-size: cover;
 		}
 	</style>
 </head>
@@ -34,7 +36,6 @@
 			}
 		 ?>
 		 <?php  Index::main();?>
-		 <form action="index.php" method="POST">
 		 	<!-- <input type="text" placeholder="nombre" name="nombre" id="nombre">
 		 	<input type="text" placeholder="apellidos" name="apellidos" id="apellidos">
 		 	<input type="text" placeholder="ciudad" name="ciudad" id="ciudad">
@@ -57,17 +58,23 @@
 		 		include 'Input.php';
 		 		
 		 		if (isset($_GET['apellidos'])) {
-		 			$input = new Input($dataForDb);
-		 			echo $input->pintarInput($_GET);
+		 			if (isset($_GET['nombre'])&&isset($_GET['ciudad'])&&isset($_GET['pais'])&&isset($_GET['action'])&&$_GET['action']=='update'){
+						//include 'Estudiantes.php';
+						$estudiante = new Estudiantes($dataForDb, $_GET);
+						echo $estudiante->update();
+					} else {
+						$input = new Input($dataForDb);
+		 				echo $input->pintarInput($_GET);
+					}
+		 			
 		 		} else{
 		 			$input = new Input($dataForDb);
 		 			echo $input->pintarInput();
 		 		}
 		 	 ?>
-		 	<input type="submit" value="Actualizar" id="btn">
-		 
-		
-		</form>
+		 	<button id="btn">
+		 		Actualizar datos
+		 	</button>
 	</article>
 	<footer>
 		
