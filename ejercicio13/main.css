@@ -1,0 +1,71 @@
+@font-face{
+	font-family: alisandra;
+	src: url('fonts/alisandra.ttf');
+}
+header{
+	width: 90%;
+	background-color: #558EF7;
+	background-image: url('img/path12.png');
+	margin: 0 auto;
+}
+header, h1{
+	border-radius: 5px;
+}
+h1{
+	color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: alisandra;
+    text-shadow: 2px 2px 1px rgb(141, 255, 250);
+    font-size: 4em;
+    margin-top: 8px;
+}
+html{
+	width: 100%;
+	height: 100%;
+	background: -webkit-linear-gradient(#3d97ff 0%, #bcd3e5 100%);
+	background: -o-linear-gradient(#3d97ff 0%, #bcd3e5 100%);
+	background: linear-gradient(#3d97ff 0%, #bcd3e5 100%);
+}
+label{
+	float:left;
+	clear: both;
+}
+input, textarea{
+	width: 100%;
+	float:left;
+	box-sizing: border-box;
+	clear: both;
+}
+article{
+	background: #55BBEA url('img/patform.png') repeat fixed;
+
+	width: 90%;
+	padding: 1%;
+	margin: 0 auto;
+	overflow: auto;
+}
+section{
+	float: left;
+	padding: 5px;
+	background-color:  rgba(59, 188, 35, 0.19);
+	border: 1px solid rgba(63, 255, 0, 0.64);
+}
+section.d{
+	width: 45%;
+	float: right;
+	box-sizing: border-box;
+}
+section.i{
+	width: 45%;
+	box-sizing: border-box;
+}
+table{
+	width: 100%;
+}
+.form{
+	width: 100%;
+}
+form{
+	width: 50%;
+	margin: 0 auto;
+}
