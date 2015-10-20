@@ -10,6 +10,9 @@
 	<script>
 		jQuery(document).ready(function($) {
 			console.log('entra en main');
+			$(document).mousemove(function(event) {
+				$('fieldset').animate({backgroundPositionY: "+=1px"}, 10);
+			});
 			$('span#boton-top').click(function(){
 				console.log('entra en la casa');
 	    		$('body,html').animate(

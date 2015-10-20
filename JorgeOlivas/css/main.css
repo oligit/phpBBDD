@@ -37,8 +37,10 @@ div.p30{
 	float: left;
 }
 fieldset{
-	width: 89%;
+    width: 89%;
     margin: 0 auto;
+    background-image: url('../img/patfooter2.png');
+    background-position-y: -14px;
 }
 label{
 	color: #fff;
